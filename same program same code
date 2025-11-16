@@ -1,0 +1,16 @@
+// same programe same code 
+#include <iostream>
+#include <sys/types.h>
+#include <unistd.h>
+using namespace std;
+int main(){
+    pid_t pid = fork(); 
+    if (pid < 0) {
+        cout << "Error" << endl;
+    } else {
+        cout << "Child process ID: " << getpid() << endl;
+        cout << " child Parent ID: " << getppid() << endl;
+    }
+     
+    return 0;
+}
