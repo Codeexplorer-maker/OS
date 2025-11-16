@@ -1,0 +1,19 @@
+#include<iostream>
+#include<sys/utsname.h>
+#include<sys/sysinfo.h>
+using namespace std;
+
+int main(){
+    struct sysinfo s1;
+    int i = sysinfo(&s1);
+    if(i==0){
+        cout<<"total RAM : "<<s1.totalram<<endl;
+        cout<<"available RAM : "<<s1.freeram<<endl;
+        cout<<"buffer RAM : "<<s1.bufferram<<endl;
+        cout<<"used RAM : "<<s1.totalram - s1.freeram<<endl;
+    }else{
+        cout<<"error"<<endl;
+    }
+    return 0;
+}
+
